@@ -38,7 +38,7 @@ const SideBar = () => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const location = useLocation()
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(true)
   const [selected, setSelected] = useState(location.pathname)
 
   return (
@@ -111,7 +111,7 @@ const SideBar = () => {
                   variant="h5"
                   color={colors.greenAccent[500]}
                 >
-                  VP All Things Data
+                  VP All-Things-Data
                 </Typography>
               </Box>
             </Box>

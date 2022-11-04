@@ -46,53 +46,31 @@ const BarChart = ({ isDashboard = false }) => {
           },
         }}
         keys={[
-            'hot dog',
-            'burger',
-            'sandwich',
-            'kebab',
-            'fries',
-            'donut'
+            'Hot Dog',
+            'Burger',
+            'Sandwich',
+            'Kebab',
+            'Fries',
+            'Donut'
         ]}
-        indexBy="country"
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        indexBy="Country"
+        margin={ isDashboard ?
+          {
+            top: 0,
+            right: 100,
+            bottom: 45,
+            left: 0
+          } :
+          {
+            top: 50,
+            right: 130,
+            bottom: 50,
+            left: 60
+          }}
         padding={0.3}
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
         colors={{ scheme: 'nivo' }}
-        defs={[
-            {
-                id: 'dots',
-                type: 'patternDots',
-                background: 'inherit',
-                color: '#38bcb2',
-                size: 4,
-                padding: 1,
-                stagger: true
-            },
-            {
-                id: 'lines',
-                type: 'patternLines',
-                background: 'inherit',
-                color: '#eed312',
-                rotation: -45,
-                lineWidth: 6,
-                spacing: 10
-            }
-        ]}
-        fill={[
-            {
-                match: {
-                    id: 'fries'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'sandwich'
-                },
-                id: 'lines'
-            }
-        ]}
         borderColor={{
             from: 'color',
             modifiers: [
@@ -104,22 +82,24 @@ const BarChart = ({ isDashboard = false }) => {
         }}
         axisTop={null}
         axisRight={null}
-        axisBottom={{
+        axisBottom={ isDashboard ? null : 
+          {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: isDashboard ? undefined : 'country',
+            legend: 'Country',
             legendPosition: 'middle',
             legendOffset: 32
-        }}
-        axisLeft={{
+          }}
+        axisLeft={ isDashboard ? null :
+          {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: isDashboard ? undefined : 'food',
+            legend: 'Food',
             legendPosition: 'middle',
             legendOffset: -40
-        }}
+          }}
         enableLabel={false}
         labelSkipWidth={12}
         labelSkipHeight={12}
