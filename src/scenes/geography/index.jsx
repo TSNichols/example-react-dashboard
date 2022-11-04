@@ -12,8 +12,8 @@ const Geo = () => {
       <Header title='GEO CHART' subtitle='Simple Geo Chart'/>
       <Box
         height='75vh'
-        // border={`1px solid ${colors.grey[100]}`}
-        // borderRadius='4px'
+        border={`1px solid ${colors.grey[100]}`}
+        borderRadius='4px'
       >
         <GeoChart />
       </Box>  
