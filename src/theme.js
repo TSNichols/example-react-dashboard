@@ -145,6 +145,9 @@ export const themeSettings = (mode) => {
             default: colors.primary[500],
           },
         }
+        //
+        // light mode colors
+        //
         : {
           primary: {
             main: colors.primary[100],
