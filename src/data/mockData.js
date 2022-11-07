@@ -399,32 +399,32 @@ export const mockBarData = [
 
 export const mockPieData = [
   {
-    id: "hack",
-    label: "hack",
+    id: "Hack",
+    label: "Hack",
     value: 239,
     color: "hsl(104, 70%, 50%)",
   },
   {
-    id: "make",
-    label: "make",
+    id: "Make",
+    label: "Make",
     value: 170,
     color: "hsl(162, 70%, 50%)",
   },
   {
-    id: "go",
-    label: "go",
+    id: "Go",
+    label: "Go",
     value: 322,
     color: "hsl(291, 70%, 50%)",
   },
   {
-    id: "lisp",
-    label: "lisp",
+    id: "Lisp",
+    label: "Lisp",
     value: 503,
     color: "hsl(229, 70%, 50%)",
   },
   {
-    id: "scala",
-    label: "scala",
+    id: "Scala",
+    label: "Scala",
     value: 584,
     color: "hsl(344, 70%, 50%)",
   },
@@ -436,51 +436,51 @@ export const mockLineData = [
     color: tokens("dark").greenAccent[500],
     data: [
       {
-        x: "plane",
+        x: "Plane",
         y: 101,
       },
       {
-        x: "helicopter",
+        x: "Helicopter",
         y: 75,
       },
       {
-        x: "boat",
+        x: "Boat",
         y: 36,
       },
       {
-        x: "train",
+        x: "Train",
         y: 216,
       },
       {
-        x: "subway",
+        x: "Subway",
         y: 35,
       },
       {
-        x: "bus",
+        x: "Bus",
         y: 236,
       },
       {
-        x: "car",
+        x: "Car",
         y: 88,
       },
       {
-        x: "moto",
+        x: "Moto",
         y: 232,
       },
       {
-        x: "bicycle",
+        x: "Bicycle",
         y: 281,
       },
       {
-        x: "horse",
+        x: "Horse",
         y: 1,
       },
       {
-        x: "skateboard",
+        x: "Skateboard",
         y: 35,
       },
       {
-        x: "others",
+        x: "Others",
         y: 14,
       },
     ],
@@ -490,51 +490,51 @@ export const mockLineData = [
     color: tokens("dark").blueAccent[300],
     data: [
       {
-        x: "plane",
+        x: "Plane",
         y: 212,
       },
       {
-        x: "helicopter",
+        x: "Helicopter",
         y: 190,
       },
       {
-        x: "boat",
+        x: "Boat",
         y: 270,
       },
       {
-        x: "train",
+        x: "Train",
         y: 9,
       },
       {
-        x: "subway",
+        x: "Subway",
         y: 75,
       },
       {
-        x: "bus",
+        x: "Bus",
         y: 175,
       },
       {
-        x: "car",
+        x: "Car",
         y: 33,
       },
       {
-        x: "moto",
+        x: "Moto",
         y: 189,
       },
       {
-        x: "bicycle",
+        x: "Bicycle",
         y: 97,
       },
       {
-        x: "horse",
+        x: "Horse",
         y: 87,
       },
       {
-        x: "skateboard",
+        x: "Skateboard",
         y: 299,
       },
       {
-        x: "others",
+        x: "Others",
         y: 251,
       },
     ],
@@ -544,51 +544,51 @@ export const mockLineData = [
     color: tokens("dark").redAccent[200],
     data: [
       {
-        x: "plane",
+        x: "Plane",
         y: 191,
       },
       {
-        x: "helicopter",
+        x: "Helicopter",
         y: 136,
       },
       {
-        x: "boat",
+        x: "Boat",
         y: 91,
       },
       {
-        x: "train",
+        x: "Train",
         y: 190,
       },
       {
-        x: "subway",
+        x: "Subway",
         y: 211,
       },
       {
-        x: "bus",
+        x: "Bus",
         y: 152,
       },
       {
-        x: "car",
+        x: "Car",
         y: 189,
       },
       {
-        x: "moto",
+        x: "Moto",
         y: 152,
       },
       {
-        x: "bicycle",
+        x: "Bicycle",
         y: 8,
       },
       {
-        x: "horse",
+        x: "Horse",
         y: 197,
       },
       {
-        x: "skateboard",
+        x: "Skateboard",
         y: 107,
       },
       {
-        x: "others",
+        x: "Others",
         y: 170,
       },
     ],

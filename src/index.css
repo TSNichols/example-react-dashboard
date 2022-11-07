@@ -3,7 +3,8 @@
 html,
 body,
 #root,
-.app {
+.app,
+.content {
   height: 100%;
   width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
@@ -11,7 +12,6 @@ body,
 
 .content {
   overflow: auto;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .app {
