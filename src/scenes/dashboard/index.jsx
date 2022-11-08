@@ -1,5 +1,4 @@
 import { Grid, Box, Button, IconButton, Typography, useTheme } from '@mui/material'
-import { tokens } from '../../theme'
 import { mockTransactions } from '../../data/mockData'
 import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined'
 import EmailIcon from '@mui/icons-material/Email'
@@ -14,10 +13,10 @@ import StatBox from '../../components/StatBox'
 import ProgressCircle from '../../components/ProgressCircle'
 
 const rowHeight = 140
+const cardShadow = 5
 
 const Dashboard = () => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
 
   return (
     <Box m='20px'>
@@ -26,12 +25,18 @@ const Dashboard = () => {
         <Header title='DASHBOARD' subtitle='Welcome to your dashboard' />
         <Box>
           <Button
+            variant='text'
             sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.grey[100],
+              color: theme.palette.neutral.main,
+              backgroundColor: theme.palette.secondary.main,
               fontSize: '14px',
               fontWeight: 'bold',
               padding: '10px 15px',
+              boxShadow: cardShadow,
+              '&:hover': {
+                color: theme.palette.neutral.dark,
+                backgroundColor: theme.palette.accent.blue.main,
+              },
             }}
           >
             <DownloadOutlinedIcon sx={{ mr: '10px' }} />
@@ -47,10 +52,11 @@ const Dashboard = () => {
         {/* Emails */}
         <Grid item xs={12} sm={6} md={3}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             display='flex'
             alignItems='center'
             justifyContent='center'
+            sx={{ boxShadow: cardShadow }}
           >
             <StatBox 
               title = '12,361'
@@ -60,7 +66,7 @@ const Dashboard = () => {
               icon={
                 <EmailIcon
                   sx={{
-                    color: colors.greenAccent[600],
+                    color: theme.palette.accent.green.main,
                     fontSize: '26px',
                   }}
                 />
@@ -71,10 +77,11 @@ const Dashboard = () => {
         {/* Sales */}
         <Grid item xs={12} sm={6} md={3}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             display='flex'
             alignItems='center'
             justifyContent='center'
+            sx={{ boxShadow: cardShadow }}
           >
             <StatBox 
               title = '431,225'
@@ -84,7 +91,7 @@ const Dashboard = () => {
               icon={
                 <PointOfSaleIcon
                   sx={{
-                    color: colors.greenAccent[600],
+                    color: theme.palette.accent.green.main,
                     fontSize: '26px',
                   }}
                 />
@@ -95,10 +102,11 @@ const Dashboard = () => {
         {/* Clients */}
         <Grid item xs={12} sm={6} md={3}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             display='flex'
             alignItems='center'
             justifyContent='center'
+            sx={{ boxShadow: cardShadow }}
           >
             <StatBox 
               title = '32,441'
@@ -108,7 +116,7 @@ const Dashboard = () => {
               icon={
                 <PersonAddIcon
                   sx={{
-                    color: colors.greenAccent[600],
+                    color: theme.palette.accent.green.main,
                     fontSize: '26px',
                   }}
                 />
@@ -119,10 +127,11 @@ const Dashboard = () => {
         {/* Traffic */}
         <Grid item xs={12} sm={6} md={3}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             display='flex'
             alignItems='center'
             justifyContent='center'
+            sx={{ boxShadow: cardShadow }}
           >
             <StatBox 
               title = '1,325,134'
@@ -132,7 +141,7 @@ const Dashboard = () => {
               icon={
                 <TrafficIcon
                   sx={{
-                    color: colors.greenAccent[600],
+                    color: theme.palette.accent.green.main,
                     fontSize: '26px',
                   }}
                 />
@@ -145,8 +154,9 @@ const Dashboard = () => {
         {/* Line Chart */}
         <Grid item xs={12} sm={12} md={8}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             height={2 * rowHeight}
+            sx={{ boxShadow: cardShadow }}
           >
             {/* Chart Headers */}
             <Box
@@ -158,15 +168,15 @@ const Dashboard = () => {
               <Box>
                 <Typography
                   variant='h5'
-                  fontWeight='600'
-                  color={colors.grey[100]}
+                  fontWeight='bold'
+                  color={theme.palette.neutral.main}
                 >
                   Revenue Generated
                 </Typography>
                 <Typography
-                  variant='h3'
+                  variant='h4'
                   fontWeight='bold'
-                  color={colors.greenAccent[500]}
+                  color={theme.palette.accent.green.main}
                 >
                   $59,342.32
                 </Typography>
@@ -174,7 +184,7 @@ const Dashboard = () => {
 
               <Box>
                 <IconButton>
-                  <DownloadOutlinedIcon sx={{ fontSize: '26px', color: colors.greenAccent[500] }} />
+                  <DownloadOutlinedIcon sx={{ fontSize: '26px', color: theme.palette.accent.green.main }} />
                 </IconButton>
               </Box>
             </Box>
@@ -192,22 +202,24 @@ const Dashboard = () => {
         {/* Recent Transactions */}
         <Grid item xs={12} sm={6} md={4}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             height={2 * rowHeight}
             overflow='auto'
+            sx={{ boxShadow: cardShadow }}
           >
             <Box
               display='flex'
               justifyContent='space-between'
               alignItems='center'
               borderBottom={`4px solid ${theme.palette.background.default}`}
-              colors={colors.grey[100]}
+              colors={theme.palette.neutral.main}
               p='15px'
+              sx={{ mb: '4px' }}
             >
               <Typography
                 variant='h5'
-                fontWeight='600'
-                color={colors.grey[100]}
+                fontWeight='bold'
+                color={theme.palette.neutral.main}
               >
                 Recent Transactions
               </Typography>
@@ -222,24 +234,20 @@ const Dashboard = () => {
                 p='15px'
               >
                 <Box>
-                  <Typography
-                    variant='h5'
-                    fontWeight='600'
-                    color={colors.greenAccent[500]}
-                  >
+                  <Typography variant='h5' fontWeight='bold' color={theme.palette.accent.green.main}>
                     {transaction.txId}
                   </Typography>
-                  <Typography
-                    color={colors.grey[100]}
-                  >
+                  <Typography fontWeight='600' color={theme.palette.neutral.main}>
                     {transaction.user}
                   </Typography>
                 </Box>
-                <Box color={colors.grey[100]}>
+                <Box fontWeight='600' color={theme.palette.neutral.main}>
                   {transaction.date}
                 </Box>
                 <Box
-                  backgroundColor={colors.greenAccent[500]}
+                  fontWeight='600'
+                  color={theme.palette.neutral.dark}
+                  backgroundColor={theme.palette.accent.green.main}
                   p='5px 10px'
                   borderRadius='4px'
                 >
@@ -251,14 +259,15 @@ const Dashboard = () => {
         </Grid>
 
         {/* ROW 3 */}
-        {/* Revenue */}
+        {/* Campaign */}
         <Grid item xs={12} sm={6} md={4}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             height={2 * rowHeight}
             p='20px'
+            sx={{ boxShadow: cardShadow }}
           >
-            <Typography variant='h5' fontWeight='600'>
+            <Typography variant='h5' fontWeight='bold' color={theme.palette.neutral.main}>
               Campaign
             </Typography>
             <Box
@@ -270,12 +279,13 @@ const Dashboard = () => {
               <ProgressCircle size='125' />
               <Typography
                 variant='h5'
-                color={colors.greenAccent[500]}
+                fontWeight='600'
+                color={theme.palette.accent.green.main}
                 sx={{ mt: '15px' }}
               >
                 $48,352 revenue generated
               </Typography>
-              <Typography>
+              <Typography fontWeight='600'>
                 Includes extra misc expenditures and costs
               </Typography>
             </Box>
@@ -284,11 +294,12 @@ const Dashboard = () => {
         {/* Sales */}
         <Grid item xs={12} sm={6} md={4}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             height={2 * rowHeight}
             p='20px'
+            sx={{ boxShadow: cardShadow }}
           >
-            <Typography variant='h5' fontWeight='600'>
+            <Typography variant='h5' fontWeight='bold' color={theme.palette.neutral.main}>
               Sales Quantity
             </Typography>
             <Box
@@ -303,11 +314,12 @@ const Dashboard = () => {
         {/* Geography */}
         <Grid item xs={12} sm={6} md={4}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={theme.palette.secondary.main}
             height={2 * rowHeight}
             p='20px'
+            sx={{ boxShadow: cardShadow }}
           >
-            <Typography variant='h5' fontWeight='600' sx={{ mb: '15px' }}>
+            <Typography variant='h5' fontWeight='bold' color={theme.palette.neutral.main} sx={{ mb: '15px' }}>
               Geography Based Traffic
             </Typography>
             <Box

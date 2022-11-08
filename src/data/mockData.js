@@ -1,5 +1,3 @@
-import { tokens } from "../theme";
-
 export const mockDataTeam = [
   {
     id: 1,
@@ -7,7 +5,7 @@ export const mockDataTeam = [
     email: "jonsnow@gmail.com",
     age: 35,
     phone: "(665)121-5454",
-    access: "admin",
+    access: "Admin",
   },
   {
     id: 2,
@@ -15,7 +13,7 @@ export const mockDataTeam = [
     email: "cerseilannister@gmail.com",
     age: 42,
     phone: "(421)314-2288",
-    access: "manager",
+    access: "Manager",
   },
   {
     id: 3,
@@ -23,7 +21,7 @@ export const mockDataTeam = [
     email: "jaimelannister@gmail.com",
     age: 45,
     phone: "(422)982-6739",
-    access: "user",
+    access: "User",
   },
   {
     id: 4,
@@ -31,7 +29,7 @@ export const mockDataTeam = [
     email: "anyastark@gmail.com",
     age: 16,
     phone: "(921)425-6742",
-    access: "admin",
+    access: "Admin",
   },
   {
     id: 5,
@@ -39,7 +37,7 @@ export const mockDataTeam = [
     email: "daenerystargaryen@gmail.com",
     age: 31,
     phone: "(421)445-1189",
-    access: "user",
+    access: "User",
   },
   {
     id: 6,
@@ -47,7 +45,7 @@ export const mockDataTeam = [
     email: "evermelisandre@gmail.com",
     age: 150,
     phone: "(232)545-6483",
-    access: "manager",
+    access: "Manager",
   },
   {
     id: 7,
@@ -55,7 +53,7 @@ export const mockDataTeam = [
     email: "ferraraclifford@gmail.com",
     age: 44,
     phone: "(543)124-0123",
-    access: "user",
+    access: "User",
   },
   {
     id: 8,
@@ -63,7 +61,7 @@ export const mockDataTeam = [
     email: "rossinifrances@gmail.com",
     age: 36,
     phone: "(222)444-5555",
-    access: "user",
+    access: "User",
   },
   {
     id: 9,
@@ -71,7 +69,7 @@ export const mockDataTeam = [
     email: "harveyroxie@gmail.com",
     age: 65,
     phone: "(444)555-6239",
-    access: "admin",
+    access: "Admin",
   },
 ];
 
@@ -433,7 +431,6 @@ export const mockPieData = [
 export const mockLineData = [
   {
     id: "Japan",
-    color: tokens("dark").greenAccent[500],
     data: [
       {
         x: "Plane",
@@ -487,7 +484,6 @@ export const mockLineData = [
   },
   {
     id: "France",
-    color: tokens("dark").blueAccent[300],
     data: [
       {
         x: "Plane",
@@ -541,7 +537,6 @@ export const mockLineData = [
   },
   {
     id: "US",
-    color: tokens("dark").redAccent[200],
     data: [
       {
         x: "Plane",

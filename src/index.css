@@ -34,6 +34,6 @@ body,
 }
 
 /* Handle on Hover */
-::-webkit-scrollbar-track:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #555;
 }

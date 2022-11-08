@@ -3,77 +3,75 @@ import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import { tokens } from '../../theme'
 import Header from '../../components/Header'
 
 const FAQ = () => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
 
   return (
     <Box m='20px'>
       <Header title='FAQ' subtitle='Frequently Asked Questions Page' />
       
-      <Accordion>
+      <Accordion sx={{ backgroundColor: theme.palette.secondary.main }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant='h5'>
+          <Typography color={theme.palette.accent.green.main} variant='h5' fontWeight='bold'>
             An Important Question
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography color={theme.palette.neutral.main}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt autem quia perferendis consequuntur voluptate distinctio non esse harum rerum vero. Veniam deserunt atque doloremque provident ad, ducimus numquam pariatur iste.
           </Typography>
         </AccordionDetails>
       </Accordion>
       
-      <Accordion>
+      <Accordion sx={{ backgroundColor: theme.palette.secondary.main }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant='h5'>
+          <Typography color={theme.palette.accent.green.main} variant='h5' fontWeight='bold'>
             Another Important Question
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography color={theme.palette.neutral.main}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt autem quia perferendis consequuntur voluptate distinctio non esse harum rerum vero. Veniam deserunt atque doloremque provident ad, ducimus numquam pariatur iste.
           </Typography>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion defaultExpanded>
+      <Accordion defaultExpanded sx={{ backgroundColor: theme.palette.secondary.main }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant='h5'>
+          <Typography color={theme.palette.accent.green.main} variant='h5' fontWeight='bold'>
             My Favorite Question
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography color={theme.palette.neutral.main}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt autem quia perferendis consequuntur voluptate distinctio non esse harum rerum vero. Veniam deserunt atque doloremque provident ad, ducimus numquam pariatur iste.
           </Typography>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion sx={{ backgroundColor: theme.palette.secondary.main }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant='h5'>
+          <Typography color={theme.palette.accent.green.main} variant='h5' fontWeight='bold'>
             Some Random Question
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography color={theme.palette.neutral.main}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt autem quia perferendis consequuntur voluptate distinctio non esse harum rerum vero. Veniam deserunt atque doloremque provident ad, ducimus numquam pariatur iste.
           </Typography>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion sx={{ backgroundColor: theme.palette.secondary.main }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant='h5'>
+          <Typography color={theme.palette.accent.green.main} variant='h5' fontWeight='bold'>
             The Final Question
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography color={theme.palette.neutral.main}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt autem quia perferendis consequuntur voluptate distinctio non esse harum rerum vero. Veniam deserunt atque doloremque provident ad, ducimus numquam pariatur iste.
           </Typography>
         </AccordionDetails>

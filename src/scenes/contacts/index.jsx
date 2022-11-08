@@ -1,22 +1,21 @@
 import { Box, useTheme } from "@mui/material"
 import { DataGrid, GridToolbar } from "@mui/x-data-grid"
-import { tokens } from "../../theme"
 import { mockDataContacts } from '../../data/mockData'
 import Header from "../../components/Header"
 
 const Contacts = () => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
 
   const columns = [
     { 
       field: 'id',
       headerName: 'ID',
-      flex: 0.5,
+      flex: 0.25,
     },
     {
       field: 'registrarId',
-      headerName: 'Registrar ID'
+      headerName: 'Registrar ID',
+      flex: 0.75,
     },
     {
       field: 'name',
@@ -30,6 +29,7 @@ const Contacts = () => {
       type: 'number',
       headerAlign: 'left',
       align: 'left',
+      flex: 0.25,
     },
     {
       field: 'phone',
@@ -72,22 +72,22 @@ const Contacts = () => {
             borderBottom: 'none'
           },
           '& .name-column--cell': {
-            color: colors.greenAccent[300]
+            color: theme.palette.accent.green.dark
           },
           '& .MuiDataGrid-columnHeaders': {
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: theme.palette.accent.blue.main,
             borderBottom: 'none'
           },
           '& .MuiDataGrid-virtualScroller': {
-            backgroundColor: colors.primary[400]
+            backgroundColor: theme.palette.secondary.main
           },
           '& .MuiDataGrid-footerContainer': {
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: theme.palette.accent.blue.main,
             borderTop: 'none',
             borderRadius: '0 0 5px 5px',
           },
           '& .MuiDataGrid-toolbarContainer .MuiButton-text': {
-            color: `${colors.grey[100]} !important`
+            color: `${theme.palette.neutral.main} !important`
           }
         }}
       >

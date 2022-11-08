@@ -5,12 +5,10 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import listPlugin from '@fullcalendar/list'
 import interactionPlugin from '@fullcalendar/interaction'
 import { Box, List, ListItem, ListItemText, Typography, useTheme } from '@mui/material'
-import { tokens } from '../../theme'
 import Header from '../../components/Header'
 
 const Calendar = () => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
   const [currentEvents, setCurrentEvents] = useState([])
 
   const handleDateClick = (selected) => {
@@ -43,7 +41,7 @@ const Calendar = () => {
         {/* Calendar Sidebar */}
         <Box 
           flex='1 1 20%'
-          backgroundColor={colors.primary[400]}
+          backgroundColor={theme.palette.secondary.main}
           p='15px'
           borderRadius='4px'
         >
@@ -53,13 +51,14 @@ const Calendar = () => {
               <ListItem
                 key={event.id}
                 sx={{
-                  backgroundColor: colors.greenAccent[500],
+                  color: theme.palette.neutral.dark,
+                  backgroundColor: theme.palette.accent.green.main,
                   margin: '10px 0',
                   borderRadius: '2px',
                 }}
               >
                 <ListItemText
-                  primary={event.title}
+                  primary=<Typography sx={{fontWeight: 'bold'}}>{event.title}</Typography>
                   secondary={
                     <Typography>
                       {formatDate(event.start, {
@@ -76,7 +75,32 @@ const Calendar = () => {
         </Box>
 
         {/* Calendar */}
-        <Box flex='1 1 100%' ml='15px'>
+        <Box 
+          flex='1 1 100%'
+          ml='15px'
+          sx={{
+            '& .fc-event': {
+              background: `${theme.palette.accent.green.main} !important`,
+              borderColor: `${theme.palette.accent.green.main} !important`,
+            },
+            '& .fc-event-title': {
+              color: `${theme.palette.neutral.dark} !important`,
+              fontWeight: 'bold',
+            },
+            '& .fc-day-today': {
+              backgroundColor: `${theme.palette.accent.blue.main} !important`,
+            },
+            '& .fc-cell-shaded': {
+              color: `${theme.palette.neutral.dark} !important`,
+              backgroundColor: `${theme.palette.accent.blue.main} !important`,
+              fontWeight: 'bold',
+            },
+            '& .fc-list-event': {
+              color: `${theme.palette.neutral.dark} !important`,
+              fontWeight: 'bold',
+            },
+          }}
+        >
           <FullCalendar 
             height='75vh'
             plugins={[

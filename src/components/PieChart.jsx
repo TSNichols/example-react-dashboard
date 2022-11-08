@@ -1,11 +1,9 @@
 import { ResponsivePie } from '@nivo/pie'
-import { tokens } from '../theme'
 import { useTheme } from '@mui/material'
 import { mockPieData as data } from '../data/mockData'
 
 const PieChart = () => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
 
   return (
     <ResponsivePie
@@ -14,33 +12,33 @@ const PieChart = () => {
           axis: {
             domain: {
               line: {
-                stroke: colors.grey[100],
+                stroke: theme.palette.neutral.main,
               },
             },
             legend: {
               text: {
-                fill: colors.grey[100],
+                fill: theme.palette.neutral.main,
               },
             },
             ticks: {
               line: {
-                stroke: colors.grey[100],
+                stroke: theme.palette.neutral.main,
                 strokeWidth: 1,
               },
               text: {
-                fill: colors.grey[100]
+                fill: theme.palette.neutral.main
               }
             },
           },
           legends: {
             text: {
-              fill: colors.grey[100],
+              fill: theme.palette.neutral.main,
             },
           },
           tooltip: {
             container: {
-              color: colors.grey[100],
-              background: colors.primary[400],
+              color: theme.palette.neutral.main,
+              background: theme.palette.secondary.main,
               fontSize: 16,
             },
           },
@@ -61,7 +59,7 @@ const PieChart = () => {
             ]
         }}
         arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor={colors.grey[100]}
+        arcLinkLabelsTextColor={theme.palette.neutral.main}
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: 'color' }}
         enableArcLabels={false}
@@ -85,7 +83,7 @@ const PieChart = () => {
                 itemsSpacing: 0,
                 itemWidth: 100,
                 itemHeight: 18,
-                itemTextColor: colors.grey[100],
+                itemTextColor: theme.palette.neutral.main,
                 itemDirection: 'left-to-right',
                 itemOpacity: 1,
                 symbolSize: 18,

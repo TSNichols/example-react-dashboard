@@ -1,6 +1,6 @@
 import { Box, IconButton, useTheme} from '@mui/material'
 import { useContext } from 'react'
-import { ColorModeContext, tokens } from '../../theme'
+import { ColorModeContext } from '../../theme'
 import InputBase from '@mui/material/InputBase'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
@@ -12,7 +12,6 @@ import SearchIcon from '@mui/icons-material/SearchOutlined'
 
 const TopBar = () => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
   const colorMode = useContext(ColorModeContext)
 
   return (
@@ -20,7 +19,7 @@ const TopBar = () => {
       {/* Search Bar */}
       <Box 
         display='flex'
-        backgroundColor={colors.primary[400]}
+        backgroundColor={theme.palette.secondary.main}
         borderRadius='3px'
       >
         <InputBase sx={{ ml: 2, flex: 1}} placeholder='Search' />

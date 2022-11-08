@@ -1,11 +1,9 @@
 import { ResponsiveLine } from '@nivo/line'
-import { tokens } from '../theme'
 import { useTheme } from '@mui/material'
 import { mockLineData as data } from '../data/mockData'
 
 const LineChart = ({ isDashboard = false }) => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
 
   return (
     <ResponsiveLine
@@ -14,43 +12,43 @@ const LineChart = ({ isDashboard = false }) => {
           axis: {
             domain: {
               line: {
-                stroke: colors.grey[100],
+                stroke: theme.palette.neutral.main,
               },
             },
             legend: {
               text: {
-                fill: colors.grey[100],
+                fill: theme.palette.neutral.main,
               },
             },
             ticks: {
               line: {
-                stroke: colors.grey[100],
+                stroke: theme.palette.neutral.main,
                 strokeWidth: 1,
               },
               text: {
-                fill: colors.grey[100]
+                fill: theme.palette.neutral.main
               }
             },
           },
           legends: {
             text: {
-              fill: colors.grey[100],
+              fill: theme.palette.neutral.main,
             },
           },
           tooltip: {
             container: {
-              color: colors.grey[100],
-              background: colors.primary[400],
+              color: theme.palette.neutral.main,
+              background: theme.palette.secondary.main,
               fontSize: 16,
             },
           },
         }}
-        colors={ isDashboard ? {datum: 'color'} : { scheme: 'nivo' } }
+        colors={[ theme.palette.accent.red.light, theme.palette.accent.green.light, theme.palette.accent.blue.light ]}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
         xScale={{ type: 'point' }}
         yScale={{
             type: 'linear',
-            min: 'auto',
+            min: -20,
             max: 'auto',
             stacked: true,
             reverse: false
@@ -101,7 +99,7 @@ const LineChart = ({ isDashboard = false }) => {
                 itemDirection: 'left-to-right',
                 itemWidth: 80,
                 itemHeight: 20,
-                itemOpacity: 0.75,
+                itemOpacity: 1,
                 symbolSize: 12,
                 symbolShape: 'circle',
                 symbolBorderColor: 'rgba(0, 0, 0, .5)',

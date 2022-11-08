@@ -1,12 +1,10 @@
 import { Box, Typography, useTheme } from "@mui/material"
 import { DataGrid } from "@mui/x-data-grid"
-import { tokens } from "../../theme"
 import { mockDataInvoices } from '../../data/mockData'
 import Header from "../../components/Header"
 
 const Invoices = () => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
 
   const columns = [
     { 
@@ -35,7 +33,7 @@ const Invoices = () => {
       headerName: 'Cost',
       flex: 1,
       renderCell: (params) => (
-        <Typography color={colors.greenAccent[500]}>
+        <Typography color={theme.palette.accent.green.dark}>
           ${params.row.cost}
         </Typography>
       )
@@ -61,22 +59,22 @@ const Invoices = () => {
             borderBottom: 'none'
           },
           '& .name-column--cell': {
-            color: colors.greenAccent[300]
+            color: theme.palette.accent.green.dark
           },
           '& .MuiDataGrid-columnHeaders': {
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: theme.palette.accent.blue.main,
             borderBottom: 'none'
           },
           '& .MuiDataGrid-virtualScroller': {
-            backgroundColor: colors.primary[400]
+            backgroundColor: theme.palette.secondary.main
           },
           '& .MuiDataGrid-footerContainer': {
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: theme.palette.accent.blue.main,
             borderTop: 'none',
             borderRadius: '0 0 5px 5px',
           },
           '& .MuiCheckbox-root': {
-            color: `${colors.greenAccent[200]} !important`
+            color: `${theme.palette.accent.green.dark} !important`
           }
         }}
       >

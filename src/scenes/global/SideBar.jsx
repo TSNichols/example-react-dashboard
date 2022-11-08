@@ -3,7 +3,6 @@ import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import 'react-pro-sidebar/dist/css/styles.css'
 import { Box, IconButton, Typography, useTheme } from '@mui/material'
 import { Link, useLocation } from "react-router-dom";
-import { tokens } from "../../theme"
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
 import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined'
@@ -19,11 +18,10 @@ import MapOutlinedIcon from '@mui/icons-material/MapOutlined'
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
   return (
     <MenuItem
       active={selected === to}
-      style={{ color: colors.grey[100] }}
+      style={{ color: theme.palette.neutral.main }}
       onClick={ () => setSelected(to) }
       icon={icon}
     >
@@ -33,10 +31,8 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   )
 }
 
-
 const SideBar = () => {
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
   const location = useLocation()
   const [isCollapsed, setIsCollapsed] = useState(true)
   const [selected, setSelected] = useState(location.pathname)
@@ -45,7 +41,7 @@ const SideBar = () => {
     <Box
       sx={{
         '& .pro-sidebar-inner': {
-          background: `${colors.primary[400]} !important`
+          background: `${theme.palette.secondary.main} !important`
         },
         '& .pro-icon-wrapper': {
           backgroundColor: 'transparent !important'
@@ -54,11 +50,12 @@ const SideBar = () => {
           padding: '5px 35px 5px 20px !important'
         },
         '& .pro-inner-item:hover': {
-          color: '#868dfb !important'
+          color: `${theme.palette.accent.blue.light} !important`
         },
         '& .pro-menu-item.active': {
-          color: '#6870fa !important'
+          color: `${theme.palette.accent.blue.dark} !important`
         },
+        boxShadow: 5
       }}
     >
       <ProSidebar collapsed={isCollapsed}>
@@ -70,12 +67,12 @@ const SideBar = () => {
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: '10px 0 20px 0',
-              color: colors.grey[100],
+              color: theme.palette.neutral.main,
             }}
           >
             {!isCollapsed && (
               <Box display='flex' justifyContent='space-between' alignItems='center' ml='15px'>
-                <Typography variant='h3' color={colors.grey[100]}>
+                <Typography variant='h3' color={theme.palette.neutral.main}>
                   ADMINIS
                 </Typography>
                 <IconButton onClick={ () => setIsCollapsed(!isCollapsed) }>
@@ -101,7 +98,7 @@ const SideBar = () => {
               <Box textAlign='center'>
                 <Typography
                   variant="h2"
-                  color={colors.grey[100]}
+                  color={theme.palette.neutral.main}
                   fontWeight='bold'
                   sx={{ m: '10px 0 0 0' }}
                 >
@@ -109,7 +106,7 @@ const SideBar = () => {
                 </Typography>
                 <Typography
                   variant="h5"
-                  color={colors.greenAccent[500]}
+                  color={theme.palette.accent.green.main}
                 >
                   VP All-Things-Data
                 </Typography>
@@ -128,7 +125,7 @@ const SideBar = () => {
             />
             <Typography 
               variant='h6'
-              color={colors.grey[300]}
+              color={theme.palette.neutral.light}
               sx={{ m: '15px 0 5px 20px' }}
             >
               Data
@@ -156,7 +153,7 @@ const SideBar = () => {
             />
             <Typography 
               variant='h6'
-              color={colors.grey[300]}
+              color={theme.palette.neutral.light}
               sx={{ m: '15px 0 5px 20px' }}
             >
               Pages
@@ -184,7 +181,7 @@ const SideBar = () => {
             />
             <Typography 
               variant='h6'
-              color={colors.grey[300]}
+              color={theme.palette.neutral.light}
               sx={{ m: '15px 0 5px 20px' }}
             >
               Charts
