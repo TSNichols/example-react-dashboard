@@ -1,6 +1,5 @@
 import { createContext, useState, useMemo } from "react"
 import { createTheme } from "@mui/material/styles"
-import { SportsRugbySharp } from "@mui/icons-material"
 
 // color design tokens
 const colors = {
