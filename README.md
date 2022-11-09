@@ -4,4 +4,6 @@ Created as practice working with React, MUI, and other libraries to build a dash
 
 While the "dashboard" page is responsive, the sidebar and charts do not play well on mobile size screens - this would be an area of future improvement.
 
+[See it in action](https://tsnichols.github.io/example-react-dashboard/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
